@@ -4,11 +4,9 @@ import dev.aether.bootstrap.AetherBootstrapHooks;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
-import net.minecraft.network.chat.Component;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 // hides the vanilla hud while the nanovg screens are open; the hud editor redraws the elements itself inside the nvg frame
@@ -24,10 +22,4 @@ public class MixinGui {
             ci.cancel();
         }
     }
-
-    @ModifyVariable(method = "setOverlayMessage", at = @At("HEAD"), argsOnly = true)
-    private Component aether$modifyOverlayMessage(Component component) {
-        return AetherBootstrapHooks.transformOverlayMessage(component);
-    }
-
 }
