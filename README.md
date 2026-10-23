@@ -12,7 +12,7 @@
 </div>
 
 <p align="center">
-  hypixel skyblock farming qol mod for <b>26.1.2</b>
+  hypixel skyblock farming qol mod for <b>26.1.2 and 26.2</b>
 </p>
 <p align="center">
   <a href="https://discord.com/invite/BZxsfAcYYW">
