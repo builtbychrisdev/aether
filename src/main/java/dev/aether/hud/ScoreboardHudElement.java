@@ -45,7 +45,7 @@ public final class ScoreboardHudElement extends HudElement {
     public boolean isVisible() {
         Minecraft mc = Minecraft.getInstance();
         return isEnabled() && !renderingFailed && mc.player != null && mc.level != null
-                && !mc.options.hideGui && !StreamerModeManager.isEnabled() && HudRegistry.canRenderInGameplay(mc);
+                && !mc.gui.hud.isHidden() && !StreamerModeManager.isEnabled() && HudRegistry.canRenderInGameplay(mc);
     }
 
     public static void setEnabled(boolean enabled) {
