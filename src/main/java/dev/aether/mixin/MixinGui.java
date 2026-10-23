@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-// hides the vanilla hud while the nanovg screens are open; the hud editor redraws the elements itself inside the nvg frame
+// hides the vanilla hud while the main nanovg screens are open
 @Mixin(Gui.class)
 public class MixinGui {
     @Inject(method = "extractRenderState", at = @At("HEAD"), cancellable = true)

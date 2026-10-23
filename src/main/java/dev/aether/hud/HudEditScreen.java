@@ -147,15 +147,15 @@ public class HudEditScreen extends Screen {
         nvg.rect(0, tbY, width, TOOLBAR_H, Theme.withAlpha(Theme.BG_SECONDARY, 0xF0));
         nvg.rect(0, tbY, width, 1f, Theme.BORDER_DEFAULT);
 
-        // Center hint
-        nvg.textCentered(Fonts.REGULAR,
-                "Drag to move  \u2022  Ctrl/Shift+Drag to scale  \u2022  Toggle Snap for grid alignment",
-                0, tbY, width, TOOLBAR_H, 10f, Theme.TEXT_SECONDARY);
-
         float margin = 14f;
         btnBaseY  = tbY + (TOOLBAR_H - BTN_H) / 2f;
         btnDoneX  = width - margin - BTN_W;
         btnSnapX  = btnDoneX - margin - BTN_W;
+
+        // Keep the hint inside the space reserved for it instead of underneath the buttons.
+        nvg.textCentered(Fonts.REGULAR,
+                "Drag to move  \u2022  Ctrl/Shift+Drag to scale  \u2022  Toggle Snap for grid alignment",
+                margin, tbY, btnSnapX - (margin * 2f), TOOLBAR_H, 10f, Theme.TEXT_SECONDARY);
 
         // Snap button
         boolean snapOn  = snapToGrid;
