@@ -28,7 +28,7 @@ public class MixinGui {
     private void suppressHudForNvgScreens(GuiGraphicsExtractor guiGraphics,
                                           DeltaTracker deltaTracker,
                                           CallbackInfo ci) {
-        net.minecraft.client.gui.screens.Screen screen = Minecraft.getInstance().screen;
+        net.minecraft.client.gui.screens.Screen screen = Minecraft.getInstance().gui.screen();
         if (AetherBootstrapHooks.shouldSuppressVanillaHud(screen)) {
             ci.cancel();
         }
